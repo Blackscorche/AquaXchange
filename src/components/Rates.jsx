@@ -66,7 +66,7 @@ export default function CryptoRates() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 bg-white px-6 py-10">
+    <section id="rates" className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 bg-white px-6 py-10">
       <div className="w-full md:w-1/2 bg-gray-100 p-4 rounded-lg shadow-md max-h-96 overflow-y-auto">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Crypto Exchange Rates</h2>
         <input
@@ -125,6 +125,6 @@ export default function CryptoRates() {
           <p className="text-gray-500">Click a cryptocurrency to see its trend.</p>
         )}
       </div>
-    </div>
+    </section>
   );
 }

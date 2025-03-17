@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Exchange from "./components/Exchange";
-import Rates from "./components/Rates";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Rates from "./components/Rates";
 import About from "./components/About";
+import Exchange from "./components/Exchange";
 
+// MainPage Layout (for homepage, rates, about)
 function MainPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -14,8 +15,19 @@ function MainPage() {
       <main className="flex-grow">
         <Home />
         <Rates />
-        <About/>
+        <About />
       </main>
+      <Footer />
+    </div>
+  );
+}
+
+// ExchangePage Layout (for the exchange page)
+function ExchangePage() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <Exchange />
       <Footer />
     </div>
   );
@@ -27,17 +39,9 @@ function App() {
       <Routes>
         {/* Default layout with scrolling sections */}
         <Route path="/" element={<MainPage />} />
-        {/* Separate Exchange page */}
-        <Route
-          path="/exchange"
-          element={
-            <div className="flex flex-col min-h-screen">
-              <Navbar />
-              <Exchange />
-              <Footer />
-            </div>
-          }
-        />
+        
+        {/* Separate layout for Exchange page */}
+        <Route path="/exchange" element={<ExchangePage />} />
       </Routes>
     </Router>
   );

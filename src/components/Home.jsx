@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 export default function Home() {
   const textArray = [
     "AquaXchange",
@@ -31,14 +32,14 @@ export default function Home() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 bg-white overflow-hidden">
-      {/* Soft Gradient Spots */}
+      {/* Soft Gradient Spots (Reduced opacity and size for better visibility) */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] bg-blue-400 opacity-35 rounded-full blur-2xl animate-move1"></div>
-        <div className="absolute bottom-[15%] right-[10%] w-[350px] h-[350px] bg-purple-400 opacity-35 rounded-full blur-2xl animate-move2"></div>
+        <div className="absolute top-[10%] left-[5%] w-[250px] h-[250px] bg-blue-300 opacity-25 rounded-full blur-2xl animate-move1"></div>
+        <div className="absolute bottom-[15%] right-[10%] w-[250px] h-[250px] bg-purple-300 opacity-25 rounded-full blur-2xl animate-move2"></div>
       </div>
 
       {/* Typewriter Effect */}
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text p-2">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text p-2">
         {text}
         <span className="text-blue-600 animate-blink">|</span>
       </h1>
@@ -49,13 +50,9 @@ export default function Home() {
       </p>
 
       {/* Call-to-Action Button */}
-
-
-    
-
-      <Link to={"/exchange"}>
+      <Link to="/exchange">
         <button className="mt-6 bg-blue-600 cursor-pointer text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md hover:bg-blue-700 transition">
-            Convert Now
+          Convert Now
         </button>
       </Link>
     </section>
