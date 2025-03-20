@@ -7,27 +7,12 @@ import Rates from "./components/Rates";
 import About from "./components/About";
 import Exchange from "./components/Exchange";
 
-// MainPage Layout (for homepage, rates, about)
-function MainPage() {
+// Layout Wrapper
+function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow">
-        <Home />
-        <Rates />
-        <About />
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-// ExchangePage Layout (for the exchange page)
-function ExchangePage() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <Exchange />
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
@@ -36,13 +21,25 @@ function ExchangePage() {
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Default layout with scrolling sections */}
-        <Route path="/" element={<MainPage />} />
-        
-        {/* Separate layout for Exchange page */}
-        <Route path="/exchange" element={<ExchangePage />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          {/* Home page also includes Rates and About */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <Rates />
+                <About />
+              </>
+            }
+          />
+          {/* Separate pages for Rates and About */}
+          <Route path="/rates" element={<Rates />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/exchange" element={<Exchange />} />
+        </Routes>
+      </Layout>
     </Router>
   );
 }

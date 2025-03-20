@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  // Close menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <nav className="fixed left-[5px] right-[5px] top-[5px] bg-gradient-to-r from-blue-500 to-indigo-600 px-3 py-4 rounded-2xl shadow-lg z-50">
@@ -37,7 +43,11 @@ export default function Navbar() {
         </Link>
 
         {/* Hamburger Menu - Mobile */}
-        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-white"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -69,14 +79,16 @@ export default function Navbar() {
               About
             </Link>
           </li>
-          <Link to="/exchange">
-            <button
-              className="bg-white text-blue-600 px-4 py-2 rounded-xl cursor-pointer font-medium shadow-md hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
-              Start Exchanging
-            </button>
-          </Link>
+          <li>
+            <Link to="/exchange">
+              <button
+                className="bg-white text-blue-600 px-4 py-2 rounded-xl cursor-pointer font-medium shadow-md hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Start Exchanging
+              </button>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -30,8 +30,8 @@ const Exchange = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen pt-24 bg-gray-50">
-      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-md w-full border border-gray-200">
+    <div className="flex justify-center items-center min-h-screen pt-24 bg-gray-50 px-4 md:px-8">
+      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-lg w-full border border-gray-200">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
           Currency Exchange
         </h2>

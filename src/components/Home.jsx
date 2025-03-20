@@ -31,7 +31,7 @@ export default function Home() {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 bg-white overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 bg-white overflow-hidden">
       {/* Soft Gradient Spots (Reduced opacity and size for better visibility) */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[10%] left-[5%] w-[250px] h-[250px] bg-blue-300 opacity-25 rounded-full blur-2xl animate-move1"></div>
