@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <h2 className="font-bold text-lg">Get in Touch</h2>
             <p className="mt-2 flex items-center"><span className="mr-2">📍</span> 123 Blockchain Avenue, Crypto City</p>
-            <p className="mt-1 flex items-center"><span className="mr-2">📞</span> +1 555 123 4567</p>
+            <p className="mt-1 flex items-center"><span className="mr-2">📞</span> +2349037959033</p>
             <p className="mt-1 flex items-center"><span className="mr-2">📧</span> support@aquaxchange.com</p>
             <div className="mt-3 flex space-x-3">
               <a href="#" className="hover:text-gray-300">📘 Facebook</a>
